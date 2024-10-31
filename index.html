@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fit-Track</title>
+</head>
+
+<body>
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Protein(gm)</th>
+                <th>Calories(kcal)</th>
+                <th>Carbohydrates(gm)</th>
+                <th>Fat(gm)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rice</td>
+                <td>2.7g</td>
+                <td>130</td>
+                <td>28g</td>
+                <td>0.3g</td>
+            </tr>
+            <tr>
+                <td>Egg(Broiler)</td>
+                <td>6g</td>
+                <td>72</td>
+                <td>0.6g</td>
+                <td>5g</td>
+            </tr>
+            <tr>
+                <td>Egg(Goose)</td>
+                <td>19.5g</td>
+                <td>265</td>
+                <td>2g</td>
+                <td>20g</td>
+            </tr>
+            <tr>
+                <td>Raisins(14g/28pcs)</td>
+                <td>0.4g</td>
+                <td>42</td>
+                <td>11g</td>
+                <td>0.1g</td>
+            </tr>
+            <tr>
+                <td>Peanuts(14g/10pcs)</td>
+                <td>2g</td>
+                <td>60</td>
+                <td>2g</td>
+                <td>6g</td>
+            </tr>
+            <tr>
+                <td>Chickpeas(30g)</td>
+                <td>2.5g</td>
+                <td>50</td>
+                <td>8g</td>
+                <td>0.7g</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>1g</td>
+                <td>105</td>
+                <td>27g</td>
+                <td>0.3g</td>
+            </tr>
+            <tr>
+                <td>Milk(Cow/100g)</td>
+                <td>3.2g</td>
+                <td>45</td>
+                <td>4.8g</td>
+                <td>3.3g</td>
+            </tr>
+            <tr>
+                <td>Dates</td>
+                <td>0.2g</td>
+                <td>20</td>
+                <td>5.5g</td>
+                <td>0g</td>
+            </tr>
+            <tr>
+                <td>Chicken(Broiler/50gm)</td>
+                <td>18g</td>
+                <td>90</td>
+                <td>0g</td>
+                <td>2g</td>
+            </tr>
+            <tr>
+                <td>Beef(50g)</td>
+                <td>10g</td>
+                <td>110</td>
+                <td>0g</td>
+                <td>7.5g</td>
+            </tr>
+            <tr>
+                <td>Moshur Dal(65g)</td>
+                <td>4.5g</td>
+                <td>63</td>
+                <td>10g</td>
+                <td>0.3g</td>
+            </tr>
+            <tr>
+                <td>Sim(30g)</td>
+                <td>2g</td>
+                <td>26</td>
+                <td>5g</td>
+                <td>0.2g</td>
+            </tr>
+            <tr>
+                <td>Potatoes(30g)</td>
+                <td>0.54g</td>
+                <td>31</td>
+                <td>5.86g</td>
+                <td>0.67g</td>
+            </tr>
+            <tr>
+                <td>Porota</td>
+                <td>4.5g</td>
+                <td>230</td>
+                <td>35g</td>
+                <td>10g</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="calculator">
+        <h2>Calculate Nutrition</h2>
+        <label for="item">Select Food Item:</label>
+        <select id="item">
+            <option value="milk">Milk (Cow)</option>
+            <option value="rice">Rice</option>
+            <option value="egg">Egg (Broiler)</option>
+        </select>
+        <br><br>
+        <label for="amount">Enter Amount (g):</label>
+        <input type="number" id="amount" placeholder="Enter amount in grams">
+        <br><br>
+        <button onclick="calculateNutrition()">Calculate</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script> -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Fit-Track Calculator</title>
+    </head>
+    <body>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <title>Fit-Track Calculator</title>
+        </head>
+        <body>
+            <h1>Nutrition Calculator</h1>
+        
+            <div class="container">
+                <table id="nutrition-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Protein (gm)</th>
+                            <th>Calories (kcal)</th>
+                            <th>Carbohydrates (gm)</th>
+                            <th>Fat (gm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-name="Rice" data-protein="2.7" data-calories="130" data-carbs="28" data-fat="0.3" data-serving="100" data-unit="g">
+                            <td>Rice</td>
+                            <td>2.7</td>
+                            <td>130</td>
+                            <td>28</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr data-name="Egg (Broiler)" data-protein="6" data-calories="72" data-carbs="0.6" data-fat="5" data-serving="50" data-unit="g">
+                            <td>Egg (Broiler)</td>
+                            <td>6</td>
+                            <td>72</td>
+                            <td>0.6</td>
+                            <td>5</td>
+                        </tr>
+                        <tr data-name="Egg (Goose)" data-protein="19.5" data-calories="265" data-carbs="2" data-fat="20" data-serving="100" data-unit="g">
+                            <td>Egg (Goose)</td>
+                            <td>19.5</td>
+                            <td>265</td>
+                            <td>2</td>
+                            <td>20</td>
+                        </tr>
+                        <tr data-name="Raisins (14g/28pcs)" data-protein="0.4" data-calories="42" data-carbs="11" data-fat="0.1" data-serving="14" data-unit="g">
+                            <td>Raisins (14g/28pcs)</td>
+                            <td>0.4</td>
+                            <td>42</td>
+                            <td>11</td>
+                            <td>0.1</td>
+                        </tr>
+                        <tr data-name="Peanuts (14g/10pcs)" data-protein="2" data-calories="60" data-carbs="2" data-fat="6" data-serving="14" data-unit="g">
+                            <td>Peanuts (14g/10pcs)</td>
+                            <td>2</td>
+                            <td>60</td>
+                            <td>2</td>
+                            <td>6</td>
+                        </tr>
+                        <tr data-name="Chickpeas (30g)" data-protein="2.5" data-calories="50" data-carbs="8" data-fat="0.7" data-serving="30" data-unit="g">
+                            <td>Chickpeas (30g)</td>
+                            <td>2.5</td>
+                            <td>50</td>
+                            <td>8</td>
+                            <td>0.7</td>
+                        </tr>
+                        <tr data-name="Banana" data-protein="1" data-calories="105" data-carbs="27" data-fat="0.3" data-serving="1" data-unit="pcs">
+                            <td>Banana</td>
+                            <td>1</td>
+                            <td>105</td>
+                            <td>27</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr data-name="Milk (Cow)" data-protein="3.2" data-calories="45" data-carbs="4.8" data-fat="3.3" data-serving="100" data-unit="g">
+                            <td>Milk (Cow)</td>
+                            <td>3.2</td>
+                            <td>45</td>
+                            <td>4.8</td>
+                            <td>3.3</td>
+                        </tr>
+                        <tr data-name="Dates" data-protein="0.2" data-calories="20" data-carbs="5.5" data-fat="0" data-serving="1" data-unit="pcs">
+                            <td>Dates</td>
+                            <td>0.2</td>
+                            <td>20</td>
+                            <td>5.5</td>
+                            <td>0</td>
+                        </tr>
+                        <tr data-name="Chicken (Broiler/50gm)" data-protein="18" data-calories="90" data-carbs="0" data-fat="2" data-serving="50" data-unit="g">
+                            <td>Chicken (Broiler/50gm)</td>
+                            <td>18</td>
+                            <td>90</td>
+                            <td>0</td>
+                            <td>2</td>
+                        </tr>
+                        <tr data-name="Beef (50g)" data-protein="10" data-calories="110" data-carbs="0" data-fat="7.5" data-serving="50" data-unit="g">
+                            <td>Beef (50g)</td>
+                            <td>10</td>
+                            <td>110</td>
+                            <td>0</td>
+                            <td>7.5</td>
+                        </tr>
+                        <tr data-name="Moshur Dal (65g)" data-protein="4.5" data-calories="63" data-carbs="10" data-fat="0.3" data-serving="65" data-unit="g">
+                            <td>Moshur Dal (65g)</td>
+                            <td>4.5</td>
+                            <td>63</td>
+                            <td>10</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr data-name="Sim (30g)" data-protein="2" data-calories="26" data-carbs="5" data-fat="0.2" data-serving="30" data-unit="g">
+                            <td>Sim (30g)</td>
+                            <td>2</td>
+                            <td>26</td>
+                            <td>5</td>
+                            <td>0.2</td>
+                        </tr>
+                        <tr data-name="Potatoes (30g)" data-protein="0.54" data-calories="31" data-carbs="5.86" data-fat="0.67" data-serving="30" data-unit="g">
+                            <td>Potatoes (30g)</td>
+                            <td>0.54</td>
+                            <td>31</td>
+                            <td>5.86</td>
+                            <td>0.67</td>
+                        </tr>
+                        <tr data-name="Porota" data-protein="4.5" data-calories="230" data-carbs="35" data-fat="10" data-serving="100" data-unit="g">
+                            <td>Porota</td>
+                            <td>4.5</td>
+                            <td>230</td>
+                            <td>35</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <div class="calculator">
+                    <h2>Calculate Nutrition</h2>
+                    <label for="item">Select Food Item:</label>
+                    <select id="item">
+                        <option value="">Select an item</option>
+                        <option value="Milk (Cow)">Milk (Cow)</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Egg (Broiler)">Egg (Broiler)</option>
+                        <option value="Egg (Goose)">Egg (Goose)</option>
+                        <option value="Raisins (14g/28pcs)">Raisins (14g/28pcs)</option>
+                        <option value="Peanuts (14g/10pcs)">Peanuts (14g/10pcs)</option>
+                        <option value="Chickpeas (30g)">Chickpeas (30g)</option>
+                        <option value="Banana">Banana</option>
+                        <option value="Dates">Dates</option>
+                        <option value="Chicken (Broiler/50gm)">Chicken (Broiler/50gm)</option>
+                        <option value="Beef (50g)">Beef (50g)</option>
+                        <option value="Moshur Dal (65g)">Moshur Dal (65g)</option>
+                        <option value="Sim (30g)">Sim (30g)</option>
+                        <option value="Potatoes (30g)">Potatoes (30g)</option>
+                        <option value="Porota">Porota</option>
+                    </select>
+                    
+                    <label for="amount">Enter Amount:</label>
+                    <input type="number" id="amount" placeholder="Amount">
+                    
+                    <label for="unit">Select Unit:</label>
+                    <select id="unit">
+                        <option value="g">Grams</option>
+                        <option value="pcs">Pieces</option>
+                    </select>
+                
+                    <button onclick="calculateNutrition()">Calculate</button>
+                    <div id="result"></div>
+                </div>
+            </div>
+        
+            <script src="app.js"></script>
+        </body>
+        </html>
+        
+    </body>
+    </html>
+    
+</body>
+
+</html>
